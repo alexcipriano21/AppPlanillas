@@ -10,11 +10,11 @@ import java.util.Date;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 import model.Empleado;
 
@@ -22,7 +22,7 @@ public class Planillas extends JFrame implements Runnable {
 	private static final long serialVersionUID = 1L;
 	
 	Empleado empleado = new Empleado();
-	JPanel pnlContenido;
+	JDesktopPane dskContenido;
 	JLabel lblMensaje, lblEmpleado, lblPC, lblIP, lblFecha, lblHora;
 	JLabel imgFondo, imgMenu;
 
@@ -70,12 +70,10 @@ public class Planillas extends JFrame implements Runnable {
 		setLocationRelativeTo( null );
 		setUndecorated( true );
 
-		pnlContenido = new JPanel();
-		pnlContenido.setBorder(new LineBorder(Color.GRAY));
-		pnlContenido.setBounds(251, 59, 772, 660);
-		pnlContenido.setVisible(false);
-		pnlContenido.setLayout(null);
-		getContentPane().add(pnlContenido);
+		dskContenido = new JDesktopPane();
+		dskContenido.setBounds(251, 60, 772, 661);
+		dskContenido.setVisible(false);
+		getContentPane().add(dskContenido);
 
 		JPanel pnlPlanilla = new JPanel();
 		pnlPlanilla.setBounds(0, 0, 1024, 59);
@@ -462,6 +460,7 @@ public class Planillas extends JFrame implements Runnable {
 	}
 
 	protected void lblSubMenu_mouseClicked(int index) {
+		JPanel pnl = null;
 		switch (menu) {
 			case 0: //Trabajadores
 			switch (subMenu) {
@@ -473,7 +472,7 @@ public class Planillas extends JFrame implements Runnable {
 					    case 2: break;
 					    case 3: break;
 					    case 4: break;
-					    //case 5: pnlContenido = new Cargos(); break;
+					    case 5: pnl = new Cargos(); break;
 					    case 6: break;
 				        }
 				        break;
@@ -482,7 +481,10 @@ public class Planillas extends JFrame implements Runnable {
 			case 1: break;
 			case 2: break;
 		}
-        pnlContenido.setVisible(true);
+		dskContenido.setVisible(true);
+		dskContenido.removeAll();
+		dskContenido.add(pnl);
+		pnl.setVisible(true);
 	}
 
 	@Override
