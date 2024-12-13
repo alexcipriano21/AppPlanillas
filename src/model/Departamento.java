@@ -22,6 +22,9 @@ public class Departamento {
     public void setCuenta(String cuenta) {
         Cuenta = cuenta;
     }
+    public Departamento(){
+        
+    }
 
     public Departamento(int id, String razonSocial, String cuenta) {
         this.id = id;

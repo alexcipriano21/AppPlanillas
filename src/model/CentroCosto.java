@@ -17,6 +17,10 @@ public class CentroCosto {
         Detalle = detalle;
     }
 
+    public CentroCosto(){
+        
+    }
+
     public CentroCosto(int id, String detalle) {
         this.id = id;
         Detalle = detalle;

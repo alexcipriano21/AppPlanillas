@@ -7,7 +7,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
@@ -15,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 import model.Empleado;
 
 public class Planillas extends JFrame implements Runnable {
@@ -65,18 +63,18 @@ public class Planillas extends JFrame implements Runnable {
 	
 	public Planillas() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1024, 768);
+		setBounds(0, 0, 1280, 768);
 		setLayout( null );
 		setLocationRelativeTo( null );
 		setUndecorated( true );
 
 		dskContenido = new JDesktopPane();
-		dskContenido.setBounds(251, 60, 772, 661);
+		dskContenido.setBounds(251, 60, 1028, 661);
 		dskContenido.setVisible(false);
 		getContentPane().add(dskContenido);
 
 		JPanel pnlPlanilla = new JPanel();
-		pnlPlanilla.setBounds(0, 0, 1024, 59);
+		pnlPlanilla.setBounds(0, 0, 1280, 59);
 		pnlPlanilla.setBackground( new Color(94, 17, 90) );
 		pnlPlanilla.setLayout( null );
 		getContentPane().add( pnlPlanilla );
@@ -111,13 +109,13 @@ public class Planillas extends JFrame implements Runnable {
 		pnlPlanilla.add( btnInformes );
 
 		JLabel imgSalir = new JLabel();
-		imgSalir.setBounds(980, 18, 24, 24);
+		imgSalir.setBounds(1240, 18, 24, 24);
 		imgSalir.setIcon( new ImageIcon( Login.class.getResource("/ui/img/salir.png") ) );
 		pnlPlanilla.add( imgSalir );
 		
 		imgFondo = new JLabel();
 		imgFondo.setIcon( new ImageIcon( Login.class.getResource("/ui/img/fondoApp.png") ) );
-		imgFondo.setBounds(0, 100, 1024, 528);
+		imgFondo.setBounds(0, 100, 1280, 620);
 		getContentPane().add( imgFondo );
 		
 		imgMenu = new JLabel();
@@ -143,11 +141,11 @@ public class Planillas extends JFrame implements Runnable {
 		getContentPane().add( lblIP );
 
 		lblFecha = new JLabel();
-		lblFecha.setBounds(750, 728, 150, 30);
+		lblFecha.setBounds(1020, 728, 120, 30);
 		getContentPane().add( lblFecha );
 
 		lblHora = new JLabel();
-		lblHora.setBounds(900, 728, 150, 30);
+		lblHora.setBounds(1160, 728, 120, 30);
 		getContentPane().add( lblHora );
 
 		pnlMenu = new JPanel();

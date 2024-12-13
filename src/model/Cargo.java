@@ -16,6 +16,9 @@ public class Cargo {
     public void setDetalle(String detalle) {
         Detalle = detalle;
     }
+    public Cargo(){
+        
+    }
 
     public Cargo(int id, String detalle) {
         this.id = id;
